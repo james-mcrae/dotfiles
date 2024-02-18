@@ -49,6 +49,9 @@ $DOTZSH/macos/set-hostname.sh
 # Install homebrew
 $DOTZSH/homebrew/install.sh 2>&1
 
+# Pull any submodules
+git -C $DOTZSH submodule update --init --recursive
+
 # Upgrade homebrew
 echo "› brew update"
 brew update

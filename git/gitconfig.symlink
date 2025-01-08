@@ -25,11 +25,17 @@
         #
         # Setting to git 2.0 default to suppress warning message
         default = simple
+        autoSetupRemote = true
 [credential]
 	helper = osxkeychain
 
 [init]
 	defaultBranch = main
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 [alias]
 	build = "!a() { if [ \"$1\" = \"-s\" ] || [ \"$1\" = \"--scope\" ]; then local scope=\"$2\"; shift 2; git commit -m \"build(${scope}): ${@}\"; else git commit -m \"build: ${@}\"; fi }; a"
 	chore = "!a() { if [ \"$1\" = \"-s\" ] || [ \"$1\" = \"--scope\" ]; then local scope=\"$2\"; shift 2; git commit -m \"chore(${scope}): ${@}\"; else git commit -m \"chore: ${@}\"; fi }; a"

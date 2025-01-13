@@ -3,6 +3,7 @@ export ZSH=~/.oh-my-zsh
 
 ZSH_THEME=powerlevel10k/powerlevel10k
 export ZSH_CUSTOM=$DOTZSH/oh-my-zsh/custom
+zstyle ':omz:plugins:nvm' lazy yes
 
 plugins=(
     git
@@ -13,6 +14,7 @@ plugins=(
     sdk
     brew
     ssh-agent
+    nvm
     zsh-autosuggestions
     # Must be last
     zsh-syntax-highlighting

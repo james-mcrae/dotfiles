@@ -1,6 +1,12 @@
 # Local/private config goes in the include
 [include]
         path = ~/.gitconfig.local
+[column]
+        ui = auto
+[branch]
+        sort = -committerdate
+[tag]
+        sort = version:refname
 [hub]
         protocol = https
 [color]
@@ -8,6 +14,15 @@
         status = auto
         branch = auto
         ui = true
+[diff]
+        algorithm = histogram
+        colorMoved = plain
+        mnemonicPrefix = true
+        renames = true
+[fetch]
+        prune = true
+        pruneTags = true
+        all = true
 [core]
         excludesfile = ~/.gitignore
         editor = vim
@@ -26,6 +41,14 @@
         # Setting to git 2.0 default to suppress warning message
         default = simple
         autoSetupRemote = true
+        followTags = true
+[rebase]
+        autoSquash = true
+        autoStash = true
+        updateRefs = true
+[rerere]
+        enabled = true
+        autoupdate = true
 [credential]
 	helper = osxkeychain
 [pull]

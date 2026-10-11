@@ -18,6 +18,9 @@ then
   source ~/.localrc
 fi
 
+# keep PATH and fpath free of duplicates
+typeset -U path fpath
+
 # all of our zsh files
 typeset -U config_files
 config_files=($DOTZSH/*/*.zsh)
@@ -34,9 +37,8 @@ do
   source $file
 done
 
-# initialize autocomplete here, otherwise functions won't be loaded
-autoload -Uz compinit bashcompinit
-compinit -u
+# oh-my-zsh runs compinit. Add bash completion support on top of it.
+autoload -Uz bashcompinit
 bashcompinit
 
 # load every completion after autocomplete loads

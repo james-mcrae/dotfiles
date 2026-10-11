@@ -1,4 +1,2 @@
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH=$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH
-export PATH="$(brew --prefix)/opt/openssl@3/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin:$HOMEBREW_PREFIX/opt/openssl@3/bin:$PATH"
